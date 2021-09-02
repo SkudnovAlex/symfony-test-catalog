@@ -1,0 +1,54 @@
+---
+ip: "192.168.10.23"
+memory: 2048
+cpus: 2
+name: symfony
+provider: virtualbox
+
+authorize: "C:/Users/DNS/.ssh/publicKey"
+
+keys:
+    - "C:/Users/DNS/.ssh/id_rsa"
+
+folders:
+    - map: "D:/test.test/symfony/project"
+      to: /home/sites/www
+
+sites:
+    - map: test.test
+      to: /home/sites/www/public
+      php: "7.4"
+      schedule: true
+
+databases:
+    - homestead
+
+features:
+    - mysql: false
+    - mariadb: true
+    - postgresql: false
+    - ohmyzsh: false
+    - webdriver: false
+
+#services:
+#    - enabled:
+#        - "postgresql@12-main"
+#    - disabled:
+#        - "postgresql@11-main"
+
+ports:
+    - send: 3306 # MySQL/MariaDB
+      to: 33060
+#    - send: 9010
+#        to: 9010
+#        protocol: udp
+#    - send: 4040
+#      to: 4040
+#    - send: 5432 # PostgreSQL
+#      to: 54320
+#    - send: 8025 # Mailhog
+#      to: 8025
+#    - send: 9600
+#      to: 9600
+#    - send: 27017
+#      to: 27017
