@@ -22,6 +22,7 @@
 #curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 #sudo apt-get install -y nodejs
 
+
 cd /home/sites/www
 if [! -d src/Controller ] then
     mkdir src/Controller
