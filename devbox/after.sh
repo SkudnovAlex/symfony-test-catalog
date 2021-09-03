@@ -22,8 +22,10 @@
 #curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 #sudo apt-get install -y nodejs
 
-cd /home/vagrant/www/
+cd /home/sites/www
+if [! -d src/Controller ] then
+    mkdir src/Controller
+fi
 sudo composer install
 php bin/console doctrine:migrations:migrate
 sudo mysql -uhomestead -hlocalhost -psecret homestead < /vagrant/dump.sql
-

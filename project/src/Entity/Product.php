@@ -40,7 +40,7 @@ class Product
     /**
      * @ORM\OneToOne(targetEntity=Category::class)
      */
-    private $category = 0;
+    private $category;
 
     /**
      * @ORM\Column(type="float", nullable=true)
